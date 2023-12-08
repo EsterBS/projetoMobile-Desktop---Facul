@@ -1,1 +1,1 @@
-# projetoMobile-Desktop---Facul
+# Projeto Mobile & Desktop Cruzeiro do Sul Virtual
