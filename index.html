@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Mobile</title>
+
+    <link rel="stylesheet" href="/style/index.css">
+
+</head>
+
+<body>
+
+    <div class="gameContainer" onclick="openFullscreen()">
+
+        <img src="/imgs/nuvens.png" alt="clouds" class="clouds">
+        <img src="/imgs/estrelas.png" alt="stars" class="stars">
+
+
+        <p class="score">Pontuação: 0</p>
+
+        <div class="firstMenu">
+
+            <div class="instructions">
+                <h1>Caminho de pedras</h1>
+                <h3>Instruções:</h3>
+                <p class="p">
+                    Este é um jogo estilo infinite running , para pular os obstaculos basta clicar na tela.
+                    <!-- <br>
+                    <br>
+                    Mantenha a tela na horizontal! -->
+                </p>
+            </div>
+
+            <button class="start" onclick="start()"> Start </button>
+
+        </div>
+
+        <div class="secundMenu">
+
+            <div class="instructions">
+                <h1> Game Over</h1>
+                <p class="p-2">
+                    "Toda pedra no caminho, você pode retirar."
+                    <br>
+                    Só que não!
+                </p>
+            </div>
+            
+            <div class="endButtons">
+                <button class="restart" onclick="restart()"> Reiniciar </button> <!--onclick="closeFullscreen()" -->
+                <button class="exit" onclick="exit()"> Sair </button>
+            </div>
+
+        </div>
+
+        <img src="/imgs/animacao.gif" alt="player" class="player">
+        <img src="/imgs/pedra.png" alt="stone" class="stone">
+        <img src="/imgs/borda-de-grama-cinza.png" alt="ground" class="ground">
+
+
+    </div>
+
+</body>
+<script src="/js/index.js" defer></script>
+
+</html>

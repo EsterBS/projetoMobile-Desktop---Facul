@@ -1,0 +1,317 @@
+/* @media screen and (orientation: landscape) { tela horizontal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden; /*tirar scroll automático */
+}
+
+/* @media only screen and (orientation:portrait) { */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden; /*tirar scroll automático */
+    /* transform: rotate(90deg); */
+    }
+/* } */
+
+.gameContainer {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    overflow: hidden; /* para o que ultiprassar do limite não aparecer na tela*/
+
+     /*border-bottom: 15px solid #333;chão */
+    background: linear-gradient(#1d4657, #5f7e90); /*fundo*/
+
+}
+    
+   
+.stars {
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    user-select: none;
+}
+
+.clouds {
+    width: 100%;
+    position: absolute;
+    margin-top: 50px ;
+    height: 200px;
+    animation: clouds-animation  20s infinite linear; 
+    z-index: 2;  
+    user-select: none;       
+
+}
+
+.stone {
+    position: absolute;
+    bottom: 0;
+    width: 110px;
+    right: -80px;
+    animation: stone-animation 2s infinite ease-in;
+    margin-bottom: -30px;
+    margin-left: -10px;
+    margin-right: -10px;
+
+    z-index: 2;
+    display: none;
+    user-select: none;
+}
+
+.player {
+    width: 110px;
+    position: absolute;
+    bottom: -8px;
+    left: 30px;
+    z-index: 4;
+    display: none;
+    margin-bottom: 0px;
+    /* margin-right: -10px; */
+    user-select: none;
+}
+
+.jump-animation {
+    animation: jump-animation 500ms infinite ease-out;
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    } 
+    to {
+        right: 100%;
+     }
+    }
+
+
+@keyframes stone-animation {
+    from {
+        right: -80px;
+    } 
+    to {
+        right: 100%;
+     }
+    }
+
+
+@keyframes jump-animation {
+    0 % {
+        bottom: 0;
+    }
+    40% {
+        bottom: 180px;
+    }
+    50% {
+        bottom: 180px;
+    }
+    60% {
+        bottom: 180px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+
+.score {
+    font-size: 24px;
+    color: white;
+    z-index: 5;
+    font-weight: bold;
+    display: none;
+    margin: 20px;
+    text-shadow: -1px 2px #000000f5;
+    user-select: none;
+    background-color: #3f5f71e0; 
+    position: absolute;
+    right: 0;
+    padding: 2px 15px;
+
+
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5vh;
+    user-select: none;
+    z-index: 3;
+}
+
+.instructions {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    line-height: 30px;
+    padding: 5px;
+}
+
+h1 {
+    margin: 10px;
+    user-select: none;
+}
+
+h3 {
+    user-select: none;
+}
+
+.p {
+    font-size: 20px;
+    user-select: none;
+}
+
+.firstMenu {
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+    position: relative;
+    width: 50%;
+    background: linear-gradient(225deg, grey, #000000c2); 
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    box-shadow: 6px 6px 4px 0px black;
+    
+}
+
+.start {
+    background: #ffffffe3;
+    /* z-index: 4; */
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 18px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 4px 0px black;
+    user-select: none;
+    cursor: pointer;
+}
+
+.secundMenu {
+    display: none;
+    flex-direction: column;
+    z-index: 5;
+    position: relative;
+    width: 50%;
+    background: linear-gradient(225deg, grey, #000000c2); 
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    box-shadow: 6px 6px 4px 0px black;
+}
+
+.p-2 {
+    font-style: italic;
+    font-size: 20px;
+    user-select: none;
+}
+
+.endButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px auto;
+}
+
+.restart {
+    background: #ffffffe3;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 18px;
+    margin: 10px 20px;
+    /* z-index: 4; */
+    display: none;
+    border-radius: 10px;
+    box-shadow: 6px 6px 4px 0px black;
+    user-select: none;
+    cursor: pointer;
+
+}
+
+.exit {
+    background: #ffffffe3;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 35px;
+    margin: 10px 10px;
+    /* z-index: 4; */
+    display: none;
+    border-radius: 10px;
+    box-shadow: 6px 6px 4px 0px black;
+    user-select: none;
+    cursor: pointer;
+}
+
+/*Desktop*/
+@media (min-width: 992px) {  
+    .gameContainer {
+        width: 70%;
+        height: 550px;
+        margin: 80px auto auto;
+        position: relative;
+        overflow: hidden; /* para o que ultiprassar do limite não aparecer na tela*/    
+        background: linear-gradient(#1d4657, #5f7e90); /*fundo*/
+        border-radius: 8px;
+    }
+
+    .clouds {
+        width: 100%;
+        position: absolute;
+        margin-top: 50px;
+        height: 350px;
+        animation: clouds-animation 20s infinite linear;
+        z-index: 2;
+        user-select: none;
+    }
+        
+    .player {
+        width: 180px;
+        position: absolute;
+        bottom: -10px;
+        left: 30px;
+        z-index: 4;
+        display: none;
+        margin-bottom: 0px;
+        user-select: none;
+    }
+        
+        
+    .stone {
+        position: absolute;
+        bottom: 0;
+        width: 160px;
+        right: -80px;
+        animation: stone-animation 2s infinite ease-in;
+        margin-bottom: -30px;
+        margin-left: -10px;
+        margin-right: -10px;
+        z-index: 2;
+        display: none;
+        user-select: none;
+    }
+        
+    .ground {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 7vh;
+        user-select: none;
+        z-index: 3;
+    }
+        
+}
+
+
+
+/* } */
+
